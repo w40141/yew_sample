@@ -40,13 +40,21 @@ pub fn todo_form(props: &TodoFormProps) -> Html {
     };
 
     html!(
-            <form class="mb-5">
-                <div class="mb-3">
-                    <label for="title" class="form-label">{"タイトル"}</label>
-                    <input type="text" value={(*title).clone()} {oninput} class="form-control" id="title" />
-                </div>
-                <button type="submit" onclick={onclick} class="btn btn-primary">{"追加"}</button>
-                <button type="submit" onclick={clear} class="btn btn-primary">{"クリア"}</button>
-            </form>
+        <form class="container mb-5">
+            <div class="mb-3">
+                <label for="title" class="form-label">{"タイトル"}</label>
+                <input type="text" value={(*title).clone()} {oninput} class="form-control" id="title" />
+            </div>
+            <div class="d-grid gap-2 d-md-block">
+            <button type="submit" onclick={onclick} class="btn btn-primary">{"追加"}</button>
+            <button type="reset" onclick={clear} class="btn btn-primary">{"クリア"}</button>
+            </div>
+        </form>
     )
 }
+// <div class="btn-toolbar" role="toolbar">
+//     <div class="btn-group">
+//     <button type="submit" onclick={onclick} class="btn btn-primary">{"追加"}</button>
+//     <button type="reset" onclick={clear} class="btn btn-primary">{"クリア"}</button>
+//     </div>
+// </div>
